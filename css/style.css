@@ -1,0 +1,383 @@
+/* USE FOR DEBUG*/
+/**
+{
+	outline: 1px solid black;
+}*/
+html {
+  font-size: 0.625em;
+  /* fallback IE8+ */
+  font-size: calc(1em * .625);
+  /* IE9-IE11 math fixing. See http://bit.ly/1g4X0bX */
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  font-size: 1.6em;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove font style on address */
+address {
+  font-style: normal;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
+
+/* Image replacement technique 2012 H5BP  - https://css-tricks.com/the-image-replacement-museum/ */
+.ir {
+  font: 0/0 a;
+  color: transparent;
+  border: 0;
+  text-shadow: none;
+}
+
+body {
+  background: #fafaff;
+}
+
+body, a {
+  color: #323232;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+}
+form input {
+  border-color: #39c4ff;
+  border-radius: 5px;
+  padding: 0.5em;
+}
+form button[type=submit] {
+  cursor: pointer;
+  padding: 0.5em;
+  font-weight: bold;
+}
+
+header {
+  /*	background: red;*/
+}
+header h1, header p {
+  padding: 0.5em;
+  text-align: center;
+}
+
+nav {
+  /*	background: purple;*/
+  padding: 1em;
+  text-align: center;
+}
+nav .navLinks {
+  display: inline-block;
+  padding-bottom: 1em;
+}
+nav .navLinks a {
+  font-size: 1.2em;
+  font-weight: bolder;
+  text-decoration: none;
+  padding: 0.5em;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+  background: linear-gradient(#fafaff 70%, #39c4ff);
+  border-radius: 5px;
+}
+nav .navLinks a:focus, nav .navLinks a:hover {
+  background: linear-gradient(#39c4ff 70%, #fafaff);
+  color: black;
+  font-style: italic;
+}
+nav .navLinks a.active {
+  background-image: linear-gradient(#fafaff 70%, #323232);
+}
+nav .navLinks a.active:focus, nav .navLinks a.active:hover {
+  background: linear-gradient(#39c4ff 70%, #323232);
+  color: black;
+  font-style: italic;
+}
+nav .userForms {
+  display: flex;
+  justify-content: center;
+}
+nav .userForms form p {
+  background: #323232;
+  padding: 0.5em;
+  border-radius: 5px;
+  font-size: 1.2em;
+  font-weight: bolder;
+  color: #39c4ff;
+}
+
+main {
+  /*	background: yellow;*/
+  padding: 1em;
+  text-align: center;
+}
+main .order {
+  width: 50%;
+  min-height: 5em;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border-style: solid;
+  border-width: 1em;
+  border-color: rgba(100, 100, 100, 0.5);
+  border-radius: 0 25px;
+  padding: 2em;
+}
+main .order.failure {
+  /*		background: #ffc439;*/
+  background: #dd3019;
+  color: #39c4ff;
+}
+main .order.success {
+  /*		background: #ffc439;*/
+  background: #19dd30;
+  /*			color: #39c4ff;*/
+}
+main h2 {
+  font-size: 2em;
+}
+main img {
+  margin: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  width: 30em;
+}
+main .allProducts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2em;
+}
+main .cardProduct {
+  width: 20em;
+  min-height: 32em;
+  margin: 0.5em;
+  /*		background: silver;*/
+  background: #f0f0f5;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 1em;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #39c4ff;
+  border-radius: 0 25px;
+  box-shadow: 2px 2px 2px #39c4ff;
+  transition: all 0.8s;
+}
+main .cardProduct.home {
+  text-align: left;
+  justify-content: flex-start;
+}
+main .cardProduct h3 {
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  font-size: 1.5em;
+}
+main .cardProduct p {
+  margin: 1em;
+}
+main .cardProduct img {
+  width: 100%;
+  height: auto;
+  max-height: 70%;
+  margin: initial;
+  border-radius: 0 25px;
+  transition: all 0.8s;
+}
+main .cardProduct .metaproduct {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  bottom: -5em;
+  transition: all 0.8s;
+}
+main .cardProduct .metaproduct * {
+  font-size: 1.2em;
+}
+main .cardProduct:hover, main .cardProduct:focus-within {
+  box-shadow: 3px 3px 3px rgba(150, 150, 150, 0.8);
+  border-radius: 25px 0;
+  text-shadow: 1px 1px 1px rgba(50, 50, 50, 0.2);
+}
+main .cardProduct:hover img, main .cardProduct:focus-within img {
+  border-radius: 25px 0;
+}
+main .cardProduct:hover .metaproduct, main .cardProduct:focus-within .metaproduct {
+  opacity: 100%;
+  /*				background-color: #39c4ff;*/
+  background-color: rgba(57, 196, 255, 0.8);
+  padding: 1em;
+  margin: 1em;
+  border-radius: 25px 0;
+  font-weight: bold;
+  height: auto;
+  transform: translate(0, -5em);
+}
+main .productPage {
+  /*		background: red;*/
+  min-height: 25em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+main .productPage h2 {
+  width: 100vw;
+}
+main .productPage img {
+  width: 20em;
+  margin: initial;
+  margin-left: 2em;
+  padding: 1em;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #39c4ff;
+  border-radius: 0 25px;
+  box-shadow: 2px 2px 2px #39c4ff;
+}
+main .productPage .productDetail {
+  text-align: left;
+  margin-left: 2em;
+  /*			background: yellow;*/
+}
+main .productPage .productDetail form input, main .productPage .productDetail form button[type=submit] {
+  width: 10em;
+}
+
+aside .cartCard {
+  justify-content: flex-start;
+}
+aside .cartCard p {
+  /*			background: #ffc439;*/
+  background: #39c4ff;
+  margin: 0;
+  margin-top: 11px;
+  margin-bottom: 11px;
+  height: 35px;
+  min-height: 35px;
+  max-height: 55px;
+  border-radius: 4px;
+  width: 100%;
+  line-height: 35px;
+  font-weight: bold;
+}
+
+footer {
+  /*	background: blue;*/
+  text-align: right;
+  padding: 1em;
+}
+
+/*# sourceMappingURL=style.css.map */
